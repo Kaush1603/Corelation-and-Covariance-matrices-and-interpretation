@@ -1,0 +1,28 @@
+---
+title: "HW for week2"
+author: "Tarun Kaushik"
+date: "2023-02-06"
+output: html_document
+---
+
+```{r}
+library(readr)
+#Sparrow Example
+Bumpus_sparrows <- read_csv("C:/Users/tarun/OneDrive/Desktop/Bumpus_sparrows.csv")
+Bumpus_sparrows
+sparr <- Bumpus_sparrows
+sparr
+#We will drop column 1 as it does not contain a number. Also matrices are now seperated.
+Survived <- sparr[1:21,-1]
+NSurvived <- sparr[22:49,-1]
+# Computing the means of each variable in data frame. Means of each row are shown on the output.
+colMeans(Survived)
+colMeans(NSurvived)
+# Covariance matrix
+cov(Survived) 
+cov(NSurvived) 
+# Correlation matrix
+cor(Survived) #There is a strong postive corelation between L_humerous and Alar_extent 0.74
+cor(NSurvived) #There is a strong postive corelation between L_humerous and L_beak_head 0.83
+```
+
